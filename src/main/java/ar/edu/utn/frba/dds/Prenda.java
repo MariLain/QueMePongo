@@ -1,23 +1,19 @@
 package ar.edu.utn.frba.dds;
 
 public class Prenda {
-  private String material;
+  private Material material;
   private TipoPrenda tipo;
   private Color colorPrimario;
   private Color colorSecundario;
 
-  public Prenda(String material, TipoPrenda tipo, Color colorPrimario) {
+  public Prenda(Material material, TipoPrenda tipo, Color colorPrimario) {
+    if(material == null || tipo == null || colorPrimario == null){
+      throw new RuntimeException();
+    }
     this.material = material;
     this.tipo = tipo;
     this.colorPrimario = colorPrimario;
   }
-
-  public Prenda(String material, TipoPrenda tipo, Color colorPrimario, Color colorSecundario) {
-    this.material = material;
-    this.tipo = tipo;
-    this.colorPrimario = colorPrimario;
-    this.colorSecundario = colorSecundario;
-  }
-
+  
 }
 
