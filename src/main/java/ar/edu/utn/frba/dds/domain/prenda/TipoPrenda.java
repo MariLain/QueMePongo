@@ -1,9 +1,11 @@
-package ar.edu.utn.frba.dds;
+package ar.edu.utn.frba.dds.domain.prenda;
 
 public enum TipoPrenda {
   ZAPATO(Categoria.CALZADO),
   CAMISA(Categoria.PARTE_SUPERIOR),
-  PANTALON(Categoria.PARTE_INFERIOR);
+  PANTALON(Categoria.PARTE_INFERIOR),
+  CHOMBA(Categoria.PARTE_SUPERIOR),
+  ZAPATILLA(Categoria.CALZADO);
 
   private Categoria categoria;
 
