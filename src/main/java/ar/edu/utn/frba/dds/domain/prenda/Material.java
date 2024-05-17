@@ -2,12 +2,12 @@ package ar.edu.utn.frba.dds.domain.prenda;
 
 public class Material {
   private Tela tela;
-  private Trama trama= Trama.LISA;
+  private Trama trama = Trama.LISA;
 
   public Material(Tela tela, Trama trama) {
     this.tela = tela;
     this.trama = trama;
-    if (trama==null){
+    if (trama == null) {
       this.trama = Trama.LISA;
     }
   }

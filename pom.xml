@@ -30,6 +30,12 @@
       <artifactId>guava</artifactId>
       <version>30.1-jre</version> <!-- O la última versión disponible -->
     </dependency>
+    <dependency>
+      <groupId>com.konghq</groupId>
+      <artifactId>unirest-java</artifactId>
+      <version>3.11.09</version>
+    </dependency>
+
 
 
   </dependencies>

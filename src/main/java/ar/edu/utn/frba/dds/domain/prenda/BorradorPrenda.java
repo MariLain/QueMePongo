@@ -7,16 +7,13 @@ import ar.edu.utn.frba.dds.domain.prenda.TipoPrenda;
 
 public class BorradorPrenda {
   private TipoPrenda tipoPrenda;
-  private Material material;
+  private Tela tela;
+  private Trama trama = Trama.LISA;
   private Color colorPrimario;
   private Color colorSecundario;
 
   public BorradorPrenda(TipoPrenda tipoPrenda) {
     this.tipoPrenda = tipoPrenda;
-  }
-
-  public void setMaterial(Material material) {
-    this.material = material;
   }
 
   public void setColorPrimario(Color colorPrimario) {
@@ -27,13 +24,21 @@ public class BorradorPrenda {
     this.colorSecundario = colorSecundario;
   }
 
-  public Prenda guardarPrenda(){
-    validarPrenda();
-    return new Prenda(material,tipoPrenda,colorPrimario,colorSecundario);
+  public void setTela(Tela tela) {
+    this.tela = tela;
   }
 
-  private void validarPrenda(){
-    if(material == null || tipoPrenda == null || colorPrimario == null){
+  public void setTrama(Trama trama) {
+    this.trama = trama;
+  }
+
+  public Prenda guardarPrenda() {
+    validarPrenda();
+    return new Prenda(new Material(tela, trama), tipoPrenda, colorPrimario, colorSecundario);
+  }
+
+  private void validarPrenda() {
+    if (tela == null || tipoPrenda == null || colorPrimario == null || trama != null) {
       throw new RuntimeException();
     }
   }
