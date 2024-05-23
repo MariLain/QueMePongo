@@ -7,6 +7,7 @@ public class Prenda {
   private Color colorSecundario;
   private Formalidad formalidad;
   private double temperaturaMax;
+  private Criterio criterio;
 
   public Prenda(Prenda prenda) {
     this.material = prenda.getMaterial();
@@ -65,5 +66,12 @@ public class Prenda {
     return temperaturaMax;
   }
 
+  public Criterio getCriterio() {
+    return criterio;
+  }
+
+  public void setCriterio(Criterio criterio) {
+    this.criterio = criterio;
+  }
 }
 
