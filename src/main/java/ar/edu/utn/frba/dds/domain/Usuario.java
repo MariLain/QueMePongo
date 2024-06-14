@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Usuario {
+public class Usuario implements Interesado{
   private final List<Prenda> prendas;
 
   private List<Guardaropa> guardaropas = new ArrayList<>();
@@ -16,6 +16,7 @@ public class Usuario {
   private String cuidad;
   private List<Sugerencia> sugerencias = new ArrayList<>();
   private List<Sugerencia> sugerenciasAceptadas = new ArrayList<>();
+  private Atuendo sugerenciaAtuendoDiario;
 
   public Usuario(List<Prenda> prendas, Integer edad, ProveedorMotor proveedorMotor, String cuidad) {
     this.prendas = new ArrayList<>(prendas);
@@ -68,5 +69,9 @@ public class Usuario {
     if (sugerenciasAceptadas.contains(sugerencia)) {
       sugerencia.revertir();
     }
+  }
+
+  public void calcularAtuendoDiario() {
+    sugerenciaAtuendoDiario=proveedorMotor.getMotorSugerencias().generarSugerencias(this).get(0);
   }
 }

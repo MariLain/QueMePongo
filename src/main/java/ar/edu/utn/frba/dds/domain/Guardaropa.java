@@ -23,5 +23,4 @@ public class Guardaropa {
   public void quitarPrenda(Prenda prenda) {
     prendas.remove(prenda);
   }
-
 }
